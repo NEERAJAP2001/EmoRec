@@ -13,10 +13,10 @@
 Deployed at: https://emorecognition.herokuapp.com/
 
 
+
+
 • A glimpse of the web app:
 ![GIF](ReadMe_Resources/Glimpse.gif)
-
-
 
 
 
@@ -26,3 +26,6 @@ _**----- Important Note -----**_<br />
 • Sorry for the inconvenience.
 
 ![Heroku-Error](ReadMe_Resources/application-error-heroku.png)
+
+Screen Shot of the WebApp :
+![SS](ReadMe_Resources/Glipse_EmoRec.png)
