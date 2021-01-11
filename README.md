@@ -14,6 +14,8 @@ Deployed at: https://emorecognition.herokuapp.com/
 
 
 • A glimpse of the web app:
+![GIF](ReadMe_Resources/Glimpse.gif)
+
 
 
 
