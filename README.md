@@ -11,7 +11,7 @@
              * Python(Flask as Backend)
              
 • If you want to view the deployed model, click on the following link: <br/>
-Deployed at: _link_
+Deployed at: https://emorecognition.herokuapp.com/
 
 
 • A glimpse of the web app:
