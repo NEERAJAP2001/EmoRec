@@ -1,21 +1,21 @@
 
 ## initial imports 
-import nltk
-import pandas as pd
-import numpy as np
-import pickle
+import nltk           ## for text processing
+import pandas as pd   ## pandas for csv data processing 
+import numpy as np    ## numpy for calculations,reshaping arrays etc
+import pickle         ## pickle for saving model and exporting it to use in the API
 
 ## Reading up the dataset using pandas library
 train = pd.read_csv("/content/train.txt", delimiter=';', header=None, names=['sentence','label'])  ## We have seperator ; in the file(txt) so that's the delimeter.
-test = pd.read_csv("/content/test.txt", delimiter=';', header=None, names=['sentence','label'])
-val = pd.read_csv("/content/val.txt", delimiter=';', header=None, names=['sentence','label']) 
+test = pd.read_csv("/content/test.txt", delimiter=';', header=None, names=['sentence','label'])    ## test dataset
+val = pd.read_csv("/content/val.txt", delimiter=';', header=None, names=['sentence','label'])      ## validation dataset
 
 
 df_data = pd.concat([train, test,val])           ## Getting the total dataset by Concatinating them using pandas 
 df_data.to_csv (r'exportdata.txt', index=False)  ## Convert it to csv file
 dt_data =  pd.read_csv("exportdata.txt")         ## Now Read The File with Pandas
 
-from sklearn.feature_extraction.text import CountVectorizer  ## Imports for Model
+from sklearn.feature_extraction.text import CountVectorizer  ## Imports for Model from sklearn
 from nltk.tokenize import RegexpTokenizer                    ## Getting the Review from the DataSet using ReGex
 
 token = RegexpTokenizer(r'[a-zA-Z0-9]+')
@@ -26,7 +26,7 @@ text = cv.fit_transform(dt_data['sentence'])                 ## Transform the te
 pickle.dump(cv,open('transform.pkl','wb'))               ## This is crucial as we have to use it in our Flask API
 
 from sklearn.model_selection import train_test_split     ## Data Splitting using sklearn module
-X_train, X_test, y_train, y_test = train_test_split(text,dt_data['label'], test_size=0.30, random_state=5)    ## splitting up
+X_train, X_test, y_train, y_test = train_test_split(text,dt_data['label'], test_size=0.30, random_state=5)    ## splitting up the dataset into train and test
 
 
 from sklearn.naive_bayes import MultinomialNB  ## Modelling starts here 
