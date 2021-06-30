@@ -29,3 +29,9 @@ _**----- Important Note -----**_<br />
 
 Screen Shot of the WebApp :
 ![SS](ReadMe_Resources/Glipse_EmoRec.png)
+
+
+
+## Architecture  : 
+![Arcitecture](https://user-images.githubusercontent.com/65017645/123937130-7b8acf00-d9b3-11eb-8c8d-ac08f17e6c7e.png)
+
